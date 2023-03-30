@@ -98,7 +98,14 @@ void display() {
     cout << "n\nNumber of comparasions: " << cmp_count << endl;
     cout << "Number of data movements" << mov_count << endl;
 }
-    int main();
+int main() {
+    input();
+    q_sort(0, n - 1);
+    display();
+    system("pause");
+
+    return 0;
+}
 
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
