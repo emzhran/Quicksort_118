@@ -49,7 +49,7 @@ void q_sort(int low, int high)
     if (low > high)
         return;
     pivot = arr[low];
-    
+
     i = low + 1;
     j = high;
 
@@ -68,11 +68,24 @@ void q_sort(int low, int high)
         }
         cmp_count++;
 
+        if (i < j)
+        {
+            swap(i, j);
+            mov_count++;
+        }
+    }
+    if (low < j)
+    {
+        swap(low, j);
+        mov_count++;
+    }
+
+    q_sort(low, j - 1);
+    q_sort(j + 1, high);
+
 }
-int main()
-{
-    std::cout << "Hello World!\n";
-}
+    int main();
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
