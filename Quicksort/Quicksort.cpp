@@ -13,7 +13,7 @@ int n;
 void input() {
     while (true)
     {
-        cout << "Masukkan panjang element array : ";
+        cout << "Masukkan panjang element array : ";              
         cin >> n;
 
         if (n <= 20)
@@ -46,29 +46,29 @@ void swap(int x, int y)
 void q_sort(int low, int high)
 {
     int pivot, i, j;
-    if (low > high)
+    if (low > high)                                         //Langkah Algoritma No. 1
         return;
-    pivot = arr[low];
+    pivot = arr[low];                                       //Langkah Algoritma No. 2
 
-    i = low + 1;
-    j = high;
+    i = low + 1;                                            //Langkah Algoritma No. 3
+    j = high;                                               //Langkah Algoritma No. 4
 
-    while (i <= j)
+    while (i <= j)                                          //Langkah Algoritma No. 10
     {
-        while ((arr[i] <= pivot) && (j <= high))
+        while ((arr[i] <= pivot) && (j <= high))            //Langkah Algoritma No. 5
         {
-            i++;
+            i++;                                            //Langkah Algoritma No. 6
             cmp_count++;
         }
         cmp_count++;
-        while ((arr[j] > pivot) && (j >= low))
+        while ((arr[j] > pivot) && (j >= low))              //Langkah Algoritma No. 7
         {
-            j--;
+            j--;                                            //Langkah Algoritma No. 8
             cmp_count++;
         }
         cmp_count++;
-
-        if (i < j)
+        //if the greter element is on the left of the element
+        if (i < j)                                          //Langkah Algoritma No. 9
         {
             swap(i, j);
             mov_count++;
@@ -103,7 +103,7 @@ int main() {
     q_sort(0, n - 1);
     display();
     system("pause");
-
+    
     return 0;
 }
 
